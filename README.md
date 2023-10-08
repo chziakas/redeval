@@ -3,7 +3,7 @@ Epiphany is an open-source library to help you audit your LLM before pushing it 
 
 
 ## Red-teaming LLMs
-![Red-teaming open-source LLMs (DeepMind)](docs/redteam.png)
+![Red-teaming open-source LLMs (Perez et al., 2022)](docs/redteam.png)
 
 ## Our approach
 ![Red-teaming any LLM](docs/approach.png)
