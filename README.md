@@ -2,7 +2,7 @@
 Epiphany is an open-source library to help you audit your LLM before pushing it in production. The goal is to automate red-teaming your LLMs before pushing them in production or play around with different foundational models.
 
 
-## Red-teaming LLMs
+## Red-teaming LLMs (Perez et al., 2022)
 ![Red-teaming open-source LLMs (Perez et al., 2022)](docs/redteam.png)
 
 ## Our approach
