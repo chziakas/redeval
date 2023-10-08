@@ -68,6 +68,9 @@ def ask_directory_questions(dir_directory, questions):
         relevancy_result = relevancy_gpt4.evaluate_response(
             query=question, response=response_vector
         )
+        print(f'Question:{question} \n')
+        print(f'Passed Faithfullness:{faithfulness_result.passing} \n')
+        print(f'Passed Question-Context Relevance:{relevancy_result.passing} \n')
         if(faithfulness_result.passing == False):
             failed_questions_faith.append(question)
         if(relevancy_result.passing == False):
@@ -90,11 +93,12 @@ eval_questions = data_generator.generate_questions_from_nodes(num = 2)
 bad_questions = ['What is the weather in SF?']
 dir_directory = 'data/examples/rag' 
 
+print(f'Generated Questions:{eval_questions} \n')
+print(f'Ad-hoc Questions:{bad_questions} \n')
 questions_list = eval_questions + bad_questions
 print(questions_list)
 failed_questions_relevance, failed_questions_faith = ask_directory_questions(dir_directory, questions_list)
-print(failed_questions_relevance)
-print(failed_questions_faith)
+
 
 from epiphany.question_mutator import generate_mutations_for_question
 for question in failed_questions_faith:
@@ -104,6 +108,7 @@ for question in failed_questions_faith:
         print(f"Mutation {i}: {mutation}")
         mutated_questions.append(mutation)
 
+print(f'Generated Mutated Questions:{mutated_questions} \n')
 failed_questions_relevance, failed_questions_faith = ask_directory_questions(dir_directory, mutated_questions)
 print(failed_questions_relevance)
 print(failed_questions_faith)
