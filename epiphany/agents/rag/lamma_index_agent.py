@@ -14,11 +14,21 @@ class RagAgent:
             self.documents, service_context=self.service_context
         )
         self.query_engine = self.vector_index.as_query_engine()
+        self.retriever = self.vector_index.as_retriever()
+
+    def get_contexts(self, questions_list):
+        contexts = []
+        for question in questions_list:
+            retrieved_context = self.retriever.retrieve(question)
+            context = [item.node.text for item in retrieved_context]
+            contexts.append("\n".join(context))
+
+        return contexts
 
     def get_responses(self, questions_list):
         responses = []
         for question in questions_list:
-            response_vector = self.query_engine.query(question)
-            responses.append(response_vector)
+            response = self.query_engine.query(question)
+            responses.append(response.response)
 
         return responses

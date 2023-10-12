@@ -8,10 +8,20 @@ Epiphany is an open-source library to help you audit your LLM before pushing it 
 ## Our approach
 ![Red-teaming any LLM](docs/approach.png)
 
+## Label-free Evals
 
+### Retrived Augmented Generation (RAG)
 
-## Contributors
-Christos Ziakas and Alp Karavil
+Here is a breakdown of our approach:
+
+1. **Evaluation:** The LLM determines whether a critirion is met, leveraging its reasoning
+2. **Explanation:** The LLM explains the reasoning behind its decision, providing clarity regarding the failure cases.
+
+The following failure cases are detected:
+
+1. **Faithfulness Failure:** A faithfulness failure occurs if the response cannot be inferred purely from the context provided.
+2. **Context Relevance Failure:** A context relevance failure (bad retrieval) occures if the user's query cannot be answered purely from the retrieved context.
+3. **Answer Relevance Failure:** An answer relevacne failure occurs if the response does not answer the question.
 
 
 ## License
