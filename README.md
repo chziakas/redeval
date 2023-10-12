@@ -1,5 +1,5 @@
 ## Overview
-Epiphany is an open-source library to help you audit your LLM before pushing it in production. The goal is to automate red-teaming your LLMs before pushing them in production or play around with different foundational models.
+Epiphany aims to help in red-teaming LLMs before deploying them in production. The library provides funcionalities for auditing and evaluating LLMs without the need for human-intervene.
 
 
 ## Red-teaming LLMs (Perez et al., 2022)
@@ -22,6 +22,12 @@ The following failure cases are detected:
 1. **Faithfulness Failure:** A faithfulness failure occurs if the response cannot be inferred purely from the context provided.
 2. **Context Relevance Failure:** A context relevance failure (bad retrieval) occures if the user's query cannot be answered purely from the retrieved context.
 3. **Answer Relevance Failure:** An answer relevacne failure occurs if the response does not answer the question.
+
+
+## Get started
+
+Checkt out rag.py and data/examples/rag/results.json
+
 
 
 ## License

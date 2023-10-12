@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "epiphaneia"
+name = "epiphany"
 version = "0.1.0"
-description = ""
+description = "Auditing and Label-free Evaluation for LLMs"
 authors = ["Christos <chziakas@gmail.com>"]
 readme = "README.md"
 

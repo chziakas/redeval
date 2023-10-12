@@ -108,7 +108,7 @@ class Faithfulness:
         openai_response = self.openAIcompletion.get_completion_from_messages(message)
         openai_response_json = self.openAIcompletion.extract_json_from_response(openai_response)
 
-        metric_result, explanation = Faithfulness.compute(openai_response_json)
+        metric_result, explanation = FaithfulnessFailure.compute(openai_response_json)
         return metric_result, explanation
 
     @staticmethod
