@@ -27,4 +27,6 @@ questions_list = ['What is the weather in SF?']
 
 # Get responses for the questions
 responses = rag_agent(dir_directory, questions_list)
+
+
 print(responses)

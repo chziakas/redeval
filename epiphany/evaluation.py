@@ -18,7 +18,7 @@ from llama_index.evaluation import (
 load_dotenv()
 
 
-def evaluate_responses(response_vectors):
+def evaluate_responses(questions_list, response_vectors):
     # We will use GPT-4 for evaluating the responses
     gpt4 = OpenAI(temperature=0, model="gpt-4")
 
@@ -33,7 +33,7 @@ def evaluate_responses(response_vectors):
     failed_questions_faith = []
     failed_questions_relevance = []
 
-    for response_vector in response_vectors:
+    for question, response_vector in zip(questions_list, response_vectors):
         faithfulness_result = faithfulness_gpt4.evaluate_response(
             response=response_vector
         )
