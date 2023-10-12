@@ -1,9 +1,11 @@
-from langchain.schema import HumanMessage, SystemMessage
-from langchain.chat_models import ChatOpenAI
 import logging
+
+from langchain.chat_models import ChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
 
 logger = logging.getLogger(__name__)
 chat = ChatOpenAI(model="gpt-3.5-turbo", temperature=1.1)
+
 
 def mutate_question(question):
     messages = [
@@ -24,12 +26,10 @@ def mutate_question(question):
     response = chat(messages)
     return response.content
 
+
 def generate_mutations_for_question(question, mutation_count):
     mutated_questions = [question]
     for _ in range(mutation_count):
         mutated_question = mutate_question(mutated_questions[-1])
         mutated_questions.append(mutated_question)
     return mutated_questions
-
-
-

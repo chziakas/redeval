@@ -1,19 +1,7 @@
-import json
 from dotenv import load_dotenv
+from llama_index import ServiceContext
+from llama_index.evaluation import FaithfulnessEvaluator, RelevancyEvaluator
 from llama_index.llms import OpenAI
-import os
-from llama_index.prompts import PromptTemplate
-from llama_index import (
-    SimpleDirectoryReader,
-    SummaryIndex,
-    VectorStoreIndex,
-    ServiceContext,
-)
-from llama_index.evaluation import (
-    DatasetGenerator,
-    FaithfulnessEvaluator,
-    RelevancyEvaluator
-)
 
 load_dotenv()
 
@@ -29,15 +17,12 @@ def evaluate_responses(questions_list, response_vectors):
     faithfulness_gpt4 = FaithfulnessEvaluator(service_context=service_context_gpt4)
     relevancy_gpt4 = RelevancyEvaluator(service_context=service_context_gpt4)
 
-
     failed_questions_faith = []
     failed_questions_relevance = []
 
     for question, response_vector in zip(questions_list, response_vectors):
-        faithfulness_result = faithfulness_gpt4.evaluate_response(
-            response=response_vector
-        )
-        
+        faithfulness_result = faithfulness_gpt4.evaluate_response(response=response_vector)
+
         relevancy_result = relevancy_gpt4.evaluate_response(
             query=question, response=response_vector
         )
@@ -50,8 +35,11 @@ def evaluate_responses(questions_list, response_vectors):
 
     return failed_questions_relevance, failed_questions_faith
 
+
 # Example usage
 questions_list = ["Question1", "Question2"]  # Replace with your list of questions
 response_vectors = []  # Replace with your list of response vectors
 
-failed_questions_relevance, failed_questions_faith = evaluate_responses(questions_list, response_vectors)
+failed_questions_relevance, failed_questions_faith = evaluate_responses(
+    questions_list, response_vectors
+)

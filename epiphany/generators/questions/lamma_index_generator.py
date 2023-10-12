@@ -1,9 +1,9 @@
-import os
-from llama_index import SimpleDirectoryReader, ServiceContext
+from typing import List, Optional
+
+import openai
+from llama_index import ServiceContext, SimpleDirectoryReader
 from llama_index.evaluation import DatasetGenerator
 from llama_index.llms import OpenAI
-from typing import List, Optional
-import openai
 
 
 class QuestionGenerator:
@@ -58,9 +58,7 @@ class QuestionGenerator:
         documents = reader.load_data()
         data_generator = DatasetGenerator.from_documents(documents)
 
-        eval_questions = data_generator.generate_questions_from_nodes(
-            num=num_questions
-        )
+        eval_questions = data_generator.generate_questions_from_nodes(num=num_questions)
 
         if additional_questions:
             eval_questions += additional_questions

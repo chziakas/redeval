@@ -1,9 +1,10 @@
 from ...completion.open_ai_completion import OpenAICompletion
 
+
 class OpenQuestionGenerator:
     """
     Generates open questions given a text.
-    
+
     Attributes:
         n_questions (int): Number of questions to generate.
         openAIcompletion (OpenAICompletion): Instance for interactions with OpenAI's API.
@@ -21,7 +22,7 @@ class OpenQuestionGenerator:
         3. Return a JSON object in the following format: "question 1": 'Your question', "question 2": 'Your next question', ...
     """
 
-    def __init__(self, model: str, n_questions: int, open_ai_key:str):
+    def __init__(self, model: str, n_questions: int, open_ai_key: str):
         """
         Initialize the QuestionGenerator.
         """
@@ -40,8 +41,8 @@ class OpenQuestionGenerator:
         """
         user_message = self.USER_MESSAGE_TEMPLATE.format(text, self.n_questions)
         message = [
-            {'role': 'system', 'content': self.SYSTEM_MESSAGE}, 
-            {'role': 'user', 'content': user_message}
+            {"role": "system", "content": self.SYSTEM_MESSAGE},
+            {"role": "user", "content": user_message},
         ]
 
         openai_response = self.openAIcompletion.get_completion_from_messages(message)
