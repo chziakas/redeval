@@ -11,7 +11,7 @@ class QuestionGenerator:
     """
 
     # Pre-defined prompts for OpenAI's GPT model
-    SYSTEM_MESSAGE = """ 
+    SYSTEM_MESSAGE = """
         You are an expert at generating closed-ended (Yes/No) questions given the content of a text.
     """
 

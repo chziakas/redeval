@@ -55,20 +55,20 @@ class AnswerRelevance:
         examples (list[FewShotExampleFaithfulness]): List of few-shot examples used for evaluation.
     """
 
-    SYSTEM_MESSAGE = """ 
+    SYSTEM_MESSAGE = """
         You are an expert at evaluating whether a response answers a user's query sufficiently.
     """
 
     USER_MESSAGE_TEMPLATE = """
         Let's think step by step.
-        1. Consider the following: 
+        1. Consider the following:
         user's query: {}.
         response:{}.
         2. Determine if the response answers specifically what the user is asking about, and covers all aspects of the user's query.
         3. Provide a brief explanation of why the response does or does not answer the user's query sufficiently, labeled as 'explanation', leading up to a verdict (Yes/No) labeled as 'verdict'.
         4. Return a JSON object in the following format: "verdict": 'verdict', "explanation": 'explanation'.
 
-        Here's are some examples: 
+        Here's are some examples:
         {}
     """
 
@@ -91,9 +91,7 @@ class AnswerRelevance:
         ]
 
         openai_response = self.openAIcompletion.get_completion_from_messages(message)
-        openai_response_json = self.openAIcompletion.extract_json_from_response(
-            openai_response
-        )
+        openai_response_json = self.openAIcompletion.extract_json_from_response(openai_response)
         return openai_response_json
 
     # Few shot examples

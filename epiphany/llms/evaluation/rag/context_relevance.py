@@ -44,20 +44,20 @@ class ContextRelevance:
         examples (list[FewShotExampleFaithfulness]): List of few-shot examples used for evaluation.
     """
 
-    SYSTEM_MESSAGE = """ 
+    SYSTEM_MESSAGE = """
         You are an expert at evaluating whether a chatbot can answer a user's query using ONLY the information provided to you as context.
     """
 
     USER_MESSAGE_TEMPLATE = """
         Let's think step by step.
-        1. Consider the following: 
+        1. Consider the following:
         user's query: {}.
         context:{}.
         2. Determine if the chatbot can answer the user's query with nothing but the "context" information provided to you.
         3. Provide a brief explanation of why the context does or does not contain sufficient information, labeled as 'explanation', leading up to a verdict (Yes/No) labeled as 'verdict'.
         4. Return a JSON object in the following format: "verdict": 'verdict', "explanation": 'explanation'.
 
-        Here's are some examples: 
+        Here's are some examples:
         {}
     """
 
@@ -80,9 +80,7 @@ class ContextRelevance:
         ]
 
         openai_response = self.openAIcompletion.get_completion_from_messages(message)
-        openai_response_json = self.openAIcompletion.extract_json_from_response(
-            openai_response
-        )
+        openai_response_json = self.openAIcompletion.extract_json_from_response(openai_response)
         return openai_response_json
 
     # Few shot examples

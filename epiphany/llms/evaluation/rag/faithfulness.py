@@ -45,20 +45,20 @@ class Faithfulness:
     """
 
     # Pre-defined prompts for OpenAI's GPT model
-    SYSTEM_MESSAGE = """ 
+    SYSTEM_MESSAGE = """
         You are an expert at evaluating whether the response can be inferred using ONLY the information provided as context.
     """
 
     USER_MESSAGE_TEMPLATE = """
         Let's think step by step.
-        1. Consider the following: 
+        1. Consider the following:
         context: {}.
         response:{}.
         2. Determine if the response can be inferred purely from the context provided.
         3. Provide a brief explanation of what information the response contained that was not provided to it in the context, labeled as 'explanation', leading up to a verdict (Yes/No) labeled as 'verdict'.
         4. Return a JSON object in the following format: "verdict": 'verdict', "explanation": 'explanation'.
 
-        Here's are some examples: 
+        Here's are some examples:
         {}
     """
 
@@ -73,9 +73,7 @@ class Faithfulness:
         """
         Evaluation for is response faithful to context
         """
-        user_message = self.USER_MESSAGE_TEMPLATE.format(
-            context, response, self.examples
-        )
+        user_message = self.USER_MESSAGE_TEMPLATE.format(context, response, self.examples)
         system_message = self.SYSTEM_MESSAGE
         message = [
             {"role": "system", "content": system_message},
@@ -83,9 +81,7 @@ class Faithfulness:
         ]
 
         openai_response = self.openAIcompletion.get_completion_from_messages(message)
-        openai_response_json = self.openAIcompletion.extract_json_from_response(
-            openai_response
-        )
+        openai_response_json = self.openAIcompletion.extract_json_from_response(openai_response)
         return openai_response_json
 
     @staticmethod

@@ -1,4 +1,16 @@
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    -   id: check-byte-order-marker
+    -   id: check-merge-conflict
+    -   id: check-symlinks
+    -   id: check-toml
+    -   id: check-yaml
+    -   id: detect-private-key
+    -   id: end-of-file-fixer
+    -   id: mixed-line-ending
+    -   id: trailing-whitespace
   - repo: https://github.com/psf/black
     rev: 22.8.0
     hooks:
@@ -26,5 +38,6 @@ repos:
           - "--remove-duplicate-keys"
           - "--remove-unused-variables"
           - "--remove-all-unused-imports"
-   
-# imported by https://github.com/openai/evals/blob/main/.pre-commit-config.yaml
+
+# https://github.com/openai/evals/blob/main/.pre-commit-config.yaml
+# https://github.com/run-llama/llama_index/blob/main/.pre-commit-config.yaml

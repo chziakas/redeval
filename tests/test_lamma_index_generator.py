@@ -1,6 +1,8 @@
-from epiphany.generator.lamma_index_generator import QuestionGenerator
 import os
+
 from dotenv import load_dotenv
+
+from epiphany.generator.lamma_index_generator import QuestionGenerator
 
 
 def test_question_generation():

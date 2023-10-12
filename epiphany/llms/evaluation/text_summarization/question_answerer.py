@@ -11,16 +11,16 @@ class QuestionAnswerer:
     """
 
     # Pre-defined prompts for OpenAI's GPT model
-    SYSTEM_MESSAGE = """ 
+    SYSTEM_MESSAGE = """
         You are an expert at responding to closed-ended (Yes/No) questions using ONLY the provided context.
     """
 
     USER_MESSAGE_TEMPLATE = """
         Let's think step by step.
-        1. Consider the following: 
+        1. Consider the following:
            Questions: {}.
            Context: {}.
-        2. Respond to each question from the provided 'questions', using either 
+        2. Respond to each question from the provided 'questions', using either
            'Yes', 'No', or 'Unknown', based on the given context.
         3. Return a JSON object in the following format: "question1": "answer1", "question2": "answer2",...
     """
