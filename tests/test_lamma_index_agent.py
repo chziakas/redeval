@@ -2,7 +2,7 @@ import os
 
 from dotenv import load_dotenv
 
-from epiphany.agents.rag.lamma_index_agent import RagAgent
+from epiphany.agents.rag_agent import RagAgent
 
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
