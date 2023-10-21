@@ -1,16 +1,17 @@
 ## Overview
 
-As companies increasingly deploy Large Language Model (LLM) applications, a clear challenge emerges: How can they feel confident about their performance before full-scale deployment? Is there a way to preemptively identify issues that might negatively impact the user experience or potentially harm a company's reputation?
 
-Interestingly, LLMs can be employed to assess the performance of other LLMs, removing the need for human intervation. As LLMs and their applications continue to improve, their inclusion in more vital roles intensifies the implications of any potential missteps.
+Prior to deploying Large Language Models (LLMs) applications, there is a lack of tools available to simulate their behavior and boost confidence in their anticipated performance. How can potential failure cases or vulnerabilities that might deteriorate user experience or even harm reputation be proactively detected?
 
-Epiphany is an open-source library designed to simulate and evaluate LLM applications in diverse scenarios, without the need for human intervation.
+LLMs have the capability to audit and evaluate other LLMs efficiently without human oversight. As LLMs and their applications continually improve, integrating them into increasingly vital applications amplifies the ramifications of any potential failure.
+
+RedEval is an open-source library that simulates and evaluates LLM applications across various scenarios, all while eliminating the need for time-intensive and expensive human intervation.
 
 
 ## Auditing LLMs for various scenarios
 ![Red-teaming LLMs (Perez et al., 2022)](docs/redteam.png)
 
-Drawing inspiration from the architecture of red-teaming LLMs (Perez et al., 2022), Epiphany introduces a series of multi-turn conversations where a red-team LLM challenges a target LLM across various scenarios. These scenarios can be categorized as follows:
+Drawing inspiration from the architecture of red-teaming LLMs (Perez et al., 2022), RedEval introduces a series of multi-turn conversations where a red-team LLM challenges a target LLM across various scenarios. These scenarios can be categorized as follows:
 
 **Performance-Based on Application Layer**
 
@@ -31,7 +32,7 @@ Drawing inspiration from the architecture of red-teaming LLMs (Perez et al., 202
 
 ## LLM Evals
 
-Inspired by the performance of RLAIF (Lee et al., 2023), LLMs could be as good as humans to judge an LLM action. Epiphany introduces the following LLM evals that could be used to automatically detect failure cases.
+LLMs evals utilize an LLM's reasoning to automatically detect failure cases of LLMs. Drawing inspiration from RLAIF (Lee et al., 2023), LLMs are expected to be as competent as, or even superior to, humans in evaluating whether LLMs met specific criteria. RedEval introduces the following LLM evals.
 
 **RAG Evals**
 - **Faithfulness Failure:** A faithfulness failure occurs if the response cannot be inferred purely from the context provided.
@@ -44,10 +45,12 @@ Inspired by the performance of RLAIF (Lee et al., 2023), LLMs could be as good a
 
 
 ## Get started
+
 ### Installation
 ```bash
 pip install epiphany
 ```
+
 ### Run simulations
 ```python
 # Load a simulator
@@ -61,6 +64,7 @@ data_path_dir = 'Your txt document for RAG'
 # Run RAG erformance simulation
 PerformanceSimulator(openai_api_key=openai_api_key, n_turns=n_turns, data_path = data_path_dir).simulate()
 ```
+
 
 ## License
 
