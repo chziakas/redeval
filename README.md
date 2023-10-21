@@ -1,38 +1,42 @@
 ## Overview
 
+❓ **Problem**
 
-Prior to deploying Large Language Models (LLMs) applications, there is a lack of tools available to simulate their behavior and boost confidence in their anticipated performance. How can potential failure cases or vulnerabilities that might deteriorate user experience or even harm reputation be proactively detected?
+Before deploying Large Language Models (LLMs) in real-world applications, a significant challenge is ensuring the robustness and reliability of these systems. How can we proactively spot vulnerabilities or failure scenarios that can negatively affect user experience or cause material harm? As LLMs are gaining more emerging abilities and integrating into vital applications, any potential failure case might have even more negative consequences.
 
-LLMs have the capability to audit and evaluate other LLMs efficiently without human oversight. As LLMs and their applications continually improve, integrating them into increasingly vital applications amplifies the ramifications of any potential failure.
+⚡ **RedEval**
 
-RedEval is an open-source library that simulates and evaluates LLM applications across various scenarios, all while eliminating the need for time-intensive and expensive human intervation.
+RedEval is an open-source library that simulates and evaluates LLM applications across various scenarios, all while eliminating the need for human intervation. With the expansion of LLMs' capabilities due to scaling laws, LLMs will be soon have the capability to audit and evaluate other LLMs effectively without human oversight.
 
 
-## Auditing LLMs for various scenarios
+## 🎮 Auditing LLMs
 ![Red-teaming LLMs (Perez et al., 2022)](docs/redteam.png)
 
 Drawing inspiration from the architecture of red-teaming LLMs (Perez et al., 2022), RedEval introduces a series of multi-turn conversations where a red-team LLM challenges a target LLM across various scenarios. These scenarios can be categorized as follows:
 
-**Performance-Based on Application Layer**
+**Performance Simulations**
 
-- **Performance Evaluation**: Simulates the behavior of a potential customer with genuine intent, inquiring about the product. Metrics include Faithfulness, Answer Relevance, and Context Similarity.
+- **Performance Evaluation**: Simulates the behavior of a potential customer with genuine intent, inquiring about the product.
 - **Toxicity Evaluation**: Simulates a scenario in which a customer asks toxic questions related to the product.
 
-**Adversarial Attacks**
+**Manipulation Tactics**
 
 - **Gaslighting**: Simulates an agent that tries to manipulate the target into endorsing harmful actions.
 - **Guilt-Tripping**: Simulates an agent that coerces the target into undesired actions by inducing guilt.
+
+
+**Deception Tactics**
 - **Fraudulent Researcher**: Simulates an agent that seeks harmful actions under the pretense of academic research.
-
-**Cyber-Security Attacks**
-
-- **Prompt Injection**: Introduces malicious prefixes or suffixes to the original prompt to elicit harmful behavior.
 - **Social Engineering Attack**: Simulates an attacker seeking confidential or proprietary information from a company, falsely claiming to be a student.
 
+**Adversarial Attacks**
 
-## LLM Evals
+- **Prompt Injection**: Introduces malicious prefixes or suffixes to the original prompt to elicit harmful behavior.
 
-LLMs evals utilize an LLM's reasoning to automatically detect failure cases of LLMs. Drawing inspiration from RLAIF (Lee et al., 2023), LLMs are expected to be as competent as, or even superior to, humans in evaluating whether LLMs met specific criteria. RedEval introduces the following LLM evals.
+
+## 🔍 LLM Evals
+
+LLM evaluations leverage the reasoning capabilities of LLMs to identify and elucidate the failure scenarios of LLMs. Inspired by the observation that RLAIF demonstrated performance comparable to RLHF (Lee et al., 2023), we anticipate that LLM evaluations will soon match or even surpass human competence in assessing whether LLMs meet specific benchmarks. RedEval offers the following LLM evaluations:
 
 **RAG Evals**
 - **Faithfulness Failure:** A faithfulness failure occurs if the response cannot be inferred purely from the context provided.
