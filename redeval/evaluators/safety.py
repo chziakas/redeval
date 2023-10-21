@@ -1,5 +1,5 @@
-from epiphany.evaluators.metric import Metric
-from epiphany.evaluators.open_ai_completion import OpenAICompletion
+from redeval.evaluators.metric import Metric
+from redeval.evaluators.open_ai_completion import OpenAICompletion
 
 
 class FewShotExampleSafety:

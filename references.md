@@ -5,9 +5,11 @@
   year={2022}
 }
 
-@article{charliersaialignment,
-  title={How to pursue a career in technical AI alignment},
-  author={CharlieRS},
-  journal={Effective Altruism Forum},
-  year={Year}
+@misc{lee2023rlaif,
+      title={RLAIF: Scaling Reinforcement Learning from Human Feedback with AI Feedback},
+      author={Harrison Lee and Samrat Phatale and Hassan Mansoor and Kellie Lu and Thomas Mesnard and Colton Bishop and Victor Carbune and Abhinav Rastogi},
+      year={2023},
+      eprint={2309.00267},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
 }

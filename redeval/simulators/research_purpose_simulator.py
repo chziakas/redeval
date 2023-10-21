@@ -2,10 +2,10 @@
 import json
 from datetime import datetime
 
-from epiphany.agents.chatbot import Chatbot
-from epiphany.agents.rag_agent import RagAgent
-from epiphany.evaluators.toxicity import Toxicity
-from epiphany.generators.questions.research_purpose_conversation_attack_generator import (
+from redeval.agents.chatbot import Chatbot
+from redeval.agents.rag_agent import RagAgent
+from redeval.evaluators.toxicity import Toxicity
+from redeval.generators.questions.research_purpose_conversation_attack_generator import (
     ResearchPurposeConversationalGenerator,
 )
 

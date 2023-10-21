@@ -3,15 +3,15 @@ import os
 
 from dotenv import load_dotenv
 
-from epiphany.simulators.gaslighting_simulator import GaslightingSimulator
-from epiphany.simulators.guilting_simulator import GuiltingSimulator
-from epiphany.simulators.performance_simulator import PerformanceSimulator
+from redeval.simulators.gaslighting_simulator import GaslightingSimulator
+from redeval.simulators.guilting_simulator import GuiltingSimulator
+from redeval.simulators.performance_simulator import PerformanceSimulator
 
 # from epiphany.simulators.prompt_injection_attack_simulator import PromptInjectionAttackSimulator
-from epiphany.simulators.prompt_injection_attack_simulator import PromptInjectionAttackSimulator
-from epiphany.simulators.research_purpose_simulator import ResearchPurposeSimulator
-from epiphany.simulators.social_engineering_attack_simulator import SocialEngineeringAttackSimulator
-from epiphany.simulators.toxicity_simulator import ToxicitySimulator
+from redeval.simulators.prompt_injection_attack_simulator import PromptInjectionAttackSimulator
+from redeval.simulators.research_purpose_simulator import ResearchPurposeSimulator
+from redeval.simulators.social_engineering_attack_simulator import SocialEngineeringAttackSimulator
+from redeval.simulators.toxicity_simulator import ToxicitySimulator
 
 # Load environment variables from a .env file (if it exists)
 

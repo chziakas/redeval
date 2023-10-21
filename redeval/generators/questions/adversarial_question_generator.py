@@ -1,4 +1,4 @@
-from epiphany.evaluators.open_ai_completion import OpenAICompletion
+from redeval.evaluators.open_ai_completion import OpenAICompletion
 
 
 class AdveserialQuestionGenerator:

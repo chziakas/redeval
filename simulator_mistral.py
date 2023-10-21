@@ -3,10 +3,10 @@ import os
 
 from dotenv import load_dotenv
 
-from epiphany.simulators.gaslighting_simulator import GaslightingSimulator
-from epiphany.simulators.guilting_simulator import GuiltingSimulator
-from epiphany.simulators.prompt_injection_attack_simulator import PromptInjectionAttackSimulator
-from epiphany.simulators.research_purpose_simulator import ResearchPurposeSimulator
+from redeval.simulators.gaslighting_simulator import GaslightingSimulator
+from redeval.simulators.guilting_simulator import GuiltingSimulator
+from redeval.simulators.prompt_injection_attack_simulator import PromptInjectionAttackSimulator
+from redeval.simulators.research_purpose_simulator import ResearchPurposeSimulator
 
 # Fetch OpenAI API key from environment variables
 load_dotenv()
