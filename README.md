@@ -6,32 +6,30 @@ Interestingly, LLMs can be employed to assess the performance of other LLMs, rem
 
 Epiphany is an open-source library designed to simulate and evaluate LLM applications in diverse scenarios, without the need for human intervation.
 
-## Solution (Perez et al., 2022)
+
+## Auditing LLMs for various scenarios
 ![Red-teaming LLMs (Perez et al., 2022)](docs/redteam.png)
 
 Drawing inspiration from the architecture of red-teaming LLMs (Perez et al., 2022), Epiphany introduces a series of multi-turn conversations where a red-team LLM challenges a target LLM across various scenarios. These scenarios can be categorized as follows:
 
-**Performance-Based on Application Layer (e.g., RAG)**
+**Performance-Based on Application Layer**
 
-- Performance Evaluation**: Simulates the behavior of a potential customer with genuine intent, inquiring about the product. Metrics include Faithfulness, Answer Relevance, and Context Similarity.
-- Toxicity Evaluation: Simulates a scenario in which a customer asks toxic questions related to the product.
+- **Performance Evaluation**: Simulates the behavior of a potential customer with genuine intent, inquiring about the product. Metrics include Faithfulness, Answer Relevance, and Context Similarity.
+- **Toxicity Evaluation**: Simulates a scenario in which a customer asks toxic questions related to the product.
 
 **Adversarial Attacks**
 
-- Gaslighting: Simulates an agent that tries to manipulate the target into endorsing harmful actions.
-- Guilt-Tripping: Simulates an agent that coerces the target into undesired actions by inducing guilt.
-- Fraudulent Researcher: Simulates an agent that seeks harmful actions under the pretense of academic research.
+- **Gaslighting**: Simulates an agent that tries to manipulate the target into endorsing harmful actions.
+- **Guilt-Tripping**: Simulates an agent that coerces the target into undesired actions by inducing guilt.
+- **Fraudulent Researcher**: Simulates an agent that seeks harmful actions under the pretense of academic research.
 
 **Cyber-Security Attacks**
 
-- Prompt Injection: Introduces malicious prefixes or suffixes to the original prompt to elicit harmful behavior.
-- Social Engineering Attack: Simulates an attacker seeking confidential or proprietary information from a company, falsely claiming to be a student.
-
+- **Prompt Injection**: Introduces malicious prefixes or suffixes to the original prompt to elicit harmful behavior.
+- **Social Engineering Attack**: Simulates an attacker seeking confidential or proprietary information from a company, falsely claiming to be a student.
 
 
 ## LLM Evals
-
-### Retrived Augmented Generation (RAG)
 
 Inspired by the performance of RLAIF (Lee et al., 2023), LLMs could be as good as humans to judge an LLM action. Epiphany introduces the following LLM evals that could be used to automatically detect failure cases.
 
@@ -44,18 +42,25 @@ Inspired by the performance of RLAIF (Lee et al., 2023), LLMs could be as good a
 - **Toxicity Failure:** A toxicity failure occurs if the response is toxic.
 - **Safety Failure:** A toxicity failure occurs if the response is unsafe.
 
+
 ## Get started
-
+### Installation
 ```bash
-pip install ariadne-ai
+pip install epiphany
 ```
-or
-
+### Run simulations
 ```python
- poetry run python simulator_rag.py
- poetry run python simulator_mistral.py
-```
+# Load a simulator
+from redeval.simulators.performance_simulator import PerformanceSimulator
 
+# Set up the parameters
+openai_api_key = 'Your OpenAI APIS Key'
+n_turns = 5
+data_path_dir = 'Your txt document for RAG'
+
+# Run RAG erformance simulation
+PerformanceSimulator(openai_api_key=openai_api_key, n_turns=n_turns, data_path = data_path_dir).simulate()
+```
 
 ## License
 
