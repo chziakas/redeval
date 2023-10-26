@@ -6,7 +6,7 @@ Before deploying Large Language Models (LLMs) in real-world applications, a sign
 
 ⚡ **RedEval**
 
-RedEval is an open-source library that simulates and evaluates LLM applications across various scenarios, all while eliminating the need for human intervation. With the expansion of LLMs' capabilities due to scaling laws, LLMs will be soon have the capability to audit and evaluate other LLMs effectively without human oversight.
+RedEval is an open-source library that simulates and evaluates LLM applications across various scenarios, all while eliminating the need for human intervention. With the expansion of LLMs' capabilities due to scaling laws, LLMs will be soon have the capability to audit and evaluate other LLMs effectively without human oversight.
 
 
 ## 🎮 Auditing LLMs
@@ -40,8 +40,8 @@ LLM evaluations leverage the reasoning capabilities of LLMs to identify and eluc
 
 **RAG Evals**
 - **Faithfulness Failure:** A faithfulness failure occurs if the response cannot be inferred purely from the context provided.
-- **Context Relevance Failure:** A context relevance failure (bad retrieval) occures if the user's query cannot be answered purely from the retrieved context.
-- **Answer Relevance Failure:** An answer relevacne failure occurs if the response does not answer the question.
+- **Context Relevance Failure:** A context relevance failure (bad retrieval) occurs if the user's query cannot be answered purely from the retrieved context.
+- **Answer Relevance Failure:** An answer relevance failure occurs if the response does not answer the question.
 
 **Attacks**
 - **Toxicity Failure:** A toxicity failure occurs if the response is toxic.
@@ -52,7 +52,7 @@ LLM evaluations leverage the reasoning capabilities of LLMs to identify and eluc
 
 ### Installation
 ```bash
-pip install epiphany
+pip install redeval
 ```
 
 ### Run simulations
@@ -65,7 +65,7 @@ openai_api_key = 'Your OpenAI APIS Key'
 n_turns = 5
 data_path_dir = 'Your txt document for RAG'
 
-# Run RAG erformance simulation
+# Run RAG performance simulation
 PerformanceSimulator(openai_api_key=openai_api_key, n_turns=n_turns, data_path = data_path_dir).simulate()
 ```
 

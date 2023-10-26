@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "redeval"
-version = "0.1.0"
+version = "0.1.1"
 description = "Auditing and Label-free Evaluation for LLMs"
 authors = ["Christos Ziakas"]
 readme = "README.md"
