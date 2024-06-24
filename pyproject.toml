@@ -23,6 +23,7 @@ replicate = "^0.15.4"
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.7.1"
 black = "^24.4.2"
+ruff = "^0.4.10"
 
 [build-system]
 requires = ["poetry-core"]

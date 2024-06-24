@@ -21,6 +21,11 @@ poetry-install:
 poetry-export-requirements:
 	poetry export --without-hashes --output=requirements.txt
 
+
+.PHONY: lint
+lint:
+	ruff check redeval
+
 .DEFAULT_GOAL := default
 
 default: poetry-install
