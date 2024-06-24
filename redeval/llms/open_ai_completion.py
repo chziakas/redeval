@@ -75,7 +75,7 @@ class OpenAICompletion:
         try:
             start_index = data_string.index("{")
             json_string = data_string[start_index:]
-        except:
+        except (IndexError, KeyError):
             json_string = data_string
         return json_string
 
