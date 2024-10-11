@@ -2,7 +2,7 @@ import os
 
 from dotenv import load_dotenv
 
-from epiphany.evaluators.rag.faithfulness import Faithfulness
+from redeval.evaluators.faithfulness import Faithfulness
 
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")

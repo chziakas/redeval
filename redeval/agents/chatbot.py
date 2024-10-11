@@ -2,7 +2,7 @@ from redeval.llms.mistral_7b_completion import Mistral7bCompletion
 from redeval.llms.open_ai_completion import OpenAICompletion
 
 # Uncomment the following line if Llama70bCompletion is ever required and imported.
-# from epiphany.llms.llama_70b_completion import Llama70bCompletion
+
 
 
 class Chatbot:

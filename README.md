@@ -6,7 +6,7 @@ Before deploying Large Language Models (LLMs) in real-world applications, a sign
 
 ⚡ **RedEval**
 
-RedEval is an open-source library that simulates and evaluates LLM applications across various scenarios, all while eliminating the need for human intervention. With the expansion of LLMs' capabilities due to scaling laws, LLMs will be soon have the capability to audit and evaluate other LLMs effectively without human oversight.
+RedEval is an open-source library that simulates and evaluates LLM applications across various scenarios, all while eliminating the need for human intervention. With the expansion of LLMs' capabilities due to scaling laws, LLMs will soon have the capability to audit and evaluate other LLMs effectively without human oversight.
 
 
 ## 🎮 Auditing LLMs
@@ -61,9 +61,9 @@ pip install redeval
 from redeval.simulators.performance_simulator import PerformanceSimulator
 
 # Set up the parameters
-openai_api_key = 'Your OpenAI APIS Key'
+openai_api_key = 'Your OpenAI API Key'
 n_turns = 5
-data_path_dir = 'Your txt document for RAG'
+data_path_dir = 'Path to your text document for RAG'
 
 # Run RAG performance simulation
 PerformanceSimulator(openai_api_key=openai_api_key, n_turns=n_turns, data_path = data_path_dir).simulate()

@@ -2,7 +2,7 @@ import os
 
 from dotenv import load_dotenv
 
-from epiphany.evaluators.rag.context_relevance import ContextRelevance
+from redeval.evaluators.context_relevance import ContextRelevance
 
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")

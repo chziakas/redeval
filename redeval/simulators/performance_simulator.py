@@ -2,12 +2,12 @@
 import json
 from datetime import datetime
 
-from epiphany.agents.rag_agent import RagAgent
-from epiphany.evaluators.answer_relevance import AnswerRelevance
-from epiphany.evaluators.context_relevance import ContextRelevance
-from epiphany.evaluators.faithfulness import Faithfulness
-from epiphany.generators.questions.conversational_generator import ConversationalGenerator
-from epiphany.generators.questions.regular_question_generator import RegularQuestionGenerator
+from redeval.agents.rag_agent import RagAgent
+from redeval.evaluators.answer_relevance import AnswerRelevance
+from redeval.evaluators.context_relevance import ContextRelevance
+from redeval.evaluators.faithfulness import Faithfulness
+from redeval.generators.questions.conversational_generator import ConversationalGenerator
+from redeval.generators.questions.regular_question_generator import RegularQuestionGenerator
 
 
 class PerformanceSimulator:
