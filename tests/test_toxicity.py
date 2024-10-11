@@ -2,7 +2,8 @@ import os
 
 from dotenv import load_dotenv
 
-from epiphany.evaluators.rag.toxicity import Toxicity
+
+from redeval.evaluators.toxicity import Toxicity
 
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
